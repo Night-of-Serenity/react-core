@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%; /*root default 16px => 10px;*/
+}
+
+body {
+  background-color: #f0f0f2;
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  padding: 4.8px;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.text-red {
+  color: red;
+}
+
+.text-blue {
+  color: blue;
+}
+
+.card {
+  /* text-align: center; */
+  background-color: white;
+  padding: 4rem 3rem;
+  font-size: 2rem;
+  max-width: 700px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card__content {
+  text-align: left;
+}
+
+.card__link {
+  color: rgb(56, 72, 143);
+  cursor: pointer;
+}
+
+a {
+  color: #38488f;
+}
