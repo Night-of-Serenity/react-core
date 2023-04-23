@@ -24,37 +24,55 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: wheat;
+  background-color: #f6f7f9;
   height: 100vh;
-}
-
-.text-red {
-  color: red;
-}
-
-.text-blue {
-  color: blue;
 }
 
 .calculator {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 3fr repeat(5, 1fr);
-  background-color: red;
-  width: 800px;
-  height: 800px;
-  border-radius: 25px;
+  grid-template-rows: 2fr repeat(5, 1fr);
+  background-color: #0f3843;
+  width: 400px;
+  height: 600px;
+  padding: 30px;
+  border-radius: 20px;
 }
 
 .display {
   grid-column-start: 1;
   grid-column-end: -1;
-  background-color: pink;
+  background-color: #006069;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
-.keypress--grey {
+.component {
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+}
+
+.calculator .display {
+  color: white;
+}
+
+.btn--grey {
   background-color: grey;
 }
-.keypress--orange {
-  background-color: orange;
+.btn--orange {
+  background-color: darkslategrey;
+}
+
+.btn--dimgray {
+  background-color: dimgray;
+}
+
+.btn--leftbottom {
+  border-radius: 0 0 0 20px;
+}
+.btn--rightbottom {
+  border-radius: 0 0 20px 0;
 }
