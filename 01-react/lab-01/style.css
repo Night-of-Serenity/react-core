@@ -16,6 +16,10 @@ body {
   padding: 4.8px;
 }
 
+#root {
+  margin-top: 100px;
+}
+
 h1 {
   font-size: 4rem;
   text-align: center;
