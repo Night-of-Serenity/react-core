@@ -29,7 +29,7 @@ function App() {
 }
 
 function CalComponent({ content, addonClass }) {
-  return <div className={`component ${addonClass}`}>{content}</div>;
+  return <div className={`component ${addonClass ?? ""}`}>{content}</div>;
 }
 
 const domRoot = document.querySelector("#root");
