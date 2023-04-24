@@ -5,9 +5,8 @@
 }
 
 html {
-  font-size: 62.5%; // root 16px * 0.625 == 10px
+  font-size: 62.5%;
 }
-
 body {
   font-size: 4rem;
 }
@@ -26,4 +25,8 @@ h1 {
   align-items: center;
   background-color: wheat;
   height: 100vh;
+}
+
+.dollarbox {
+  display: flex;
 }
