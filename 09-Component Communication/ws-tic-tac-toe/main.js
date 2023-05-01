@@ -5,6 +5,7 @@ function GridTable({ gameMetrix, setGameMetrix, player, setPlayer, winner, setWi
     console.log("gameMetrix:", gameMetrix);
     if (gameMetrix[indexX][indexY] === "" && winner === null) {
       if (player === true) {
+        // player X turn
         const newArray = gameMetrix.slice();
         newArray[indexX][indexY] = "X";
         setGameMetrix(newArray);
@@ -16,6 +17,7 @@ function GridTable({ gameMetrix, setGameMetrix, player, setPlayer, winner, setWi
           setCountWinX(countWinX + 1);
         }
       } else {
+        // player O turn
         const newArray = gameMetrix.slice();
         newArray[indexX][indexY] = "O";
         setGameMetrix(newArray);
@@ -218,7 +220,7 @@ function App() {
           PLAYER {player === true ? "X" : "O"} TURN
         </div>
         <div className="wincount">
-          <div className="wincount__left">X win : {countWinX}</div> <div className="wincount__right">O win : {countWinO}</div>
+          <div className="wincount__left">X score : {countWinX}</div> <div className="wincount__right">O score : {countWinO}</div>
         </div>
       </div>
     </div>
