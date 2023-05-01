@@ -1,36 +1,4 @@
-function GridTable({ gameMetrix, setGameMetrix, player, setPlayer, winner, setWinner, countWinX, countWinO, setCountWinX, setCountWinO }) {
-  // Functin for handle event when click element inside game table
-  function handleTick(e, indexX, indexY) {
-    // When click on empty element inside table and there is no winner, take turn set string 'X' or 'O' depend on player state with that clicked element's 'index X' and 'index Y' inside gameMetrix
-    console.log("gameMetrix:", gameMetrix);
-    if (gameMetrix[indexX][indexY] === "" && winner === null) {
-      if (player === true) {
-        // player X turn
-        const newArray = gameMetrix.slice();
-        newArray[indexX][indexY] = "X";
-        setGameMetrix(newArray);
-        setPlayer(!player);
-        const transformX = tranformMetrix(gameMetrix, "X");
-        console.log("transformX:", transformX);
-        if (checkWin(transformX)) {
-          setWinner("X");
-          setCountWinX(countWinX + 1);
-        }
-      } else {
-        // player O turn
-        const newArray = gameMetrix.slice();
-        newArray[indexX][indexY] = "O";
-        setGameMetrix(newArray);
-        setPlayer(!player);
-        const transformO = tranformMetrix(gameMetrix, "O");
-        console.log("transformO:", transformO);
-        if (checkWin(transformO)) {
-          setWinner("O");
-          setCountWinO(countWinO + 1);
-        }
-      }
-    }
-  }
+function GridTable({ gameMetrix, handleTick }) {
   return (
     <div className="game-grid">
       <div
@@ -194,23 +162,45 @@ function App() {
     setWinner(null);
   }
 
+  // Functin for handle event when click element inside game table
+  function handleTheTick(e, indexX, indexY) {
+    // When click on empty element inside table and there is no winner, take turn set string 'X' or 'O' depend on player state with that clicked element's 'index X' and 'index Y' inside gameMetrix
+    console.log("gameMetrix:", gameMetrix);
+    if (gameMetrix[indexX][indexY] === "" && winner === null) {
+      if (player === true) {
+        // player X turn
+        const newArray = gameMetrix.slice();
+        newArray[indexX][indexY] = "X";
+        setGameMetrix(newArray);
+        setPlayer(!player);
+        const transformX = tranformMetrix(gameMetrix, "X");
+        console.log("transformX:", transformX);
+        if (checkWin(transformX)) {
+          setWinner("X");
+          setCountWinX(countWinX + 1);
+        }
+      } else {
+        // player O turn
+        const newArray = gameMetrix.slice();
+        newArray[indexX][indexY] = "O";
+        setGameMetrix(newArray);
+        setPlayer(!player);
+        const transformO = tranformMetrix(gameMetrix, "O");
+        console.log("transformO:", transformO);
+        if (checkWin(transformO)) {
+          setWinner("O");
+          setCountWinO(countWinO + 1);
+        }
+      }
+    }
+  }
+
   return (
     <div className="container">
       <div className="boardgame">
         <h3>tic-tac-toe</h3>
         {/* component function use for generate grid table of game*/}
-        <GridTable
-          gameMetrix={gameMetrix}
-          setGameMetrix={setGameMetrix}
-          player={player}
-          setPlayer={setPlayer}
-          winner={winner}
-          setWinner={setWinner}
-          countWinX={countWinX}
-          countWinO={countWinO}
-          setCountWinX={setCountWinX}
-          setCountWinO={setCountWinO}
-        />
+        <GridTable gameMetrix={gameMetrix} handleTick={handleTheTick} />
       </div>
       <button onClick={handleReset}>Reset Game</button>
       {/* display all status of game */}
