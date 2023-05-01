@@ -5,7 +5,7 @@
 }
 
 html {
-  font-size: 62.5%; // root 16px * 0.625 == 10px
+  font-size: 62.5%;
 }
 
 body {
@@ -24,6 +24,6 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-color: wheat; */
+  background-color: wheat;
   height: 100vh;
 }

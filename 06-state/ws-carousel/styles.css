@@ -27,3 +27,10 @@ h1 {
   /* background-color: wheat; */
   height: 100vh;
 }
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}

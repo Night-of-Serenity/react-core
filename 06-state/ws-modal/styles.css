@@ -24,6 +24,6 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-color: wheat; */
+  background-color: wheat;
   height: 100vh;
 }

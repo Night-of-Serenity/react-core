@@ -24,7 +24,7 @@ function App() {
   //   );
   // }
 
-  let text = `Click to ${isShow ? "hide" : "show"} text`;
+  let text = `${isShow ? "Hide" : "Show"}`;
 
   return (
     <div className="container">

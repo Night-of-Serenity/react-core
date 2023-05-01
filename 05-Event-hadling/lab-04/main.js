@@ -1,11 +1,10 @@
 function App() {
-  const handleChangeInput = (e) => {
-    console.log(e.target.value);
+  const handleOnClick = (e) => {
+    confirm("Leave for https://google.com") && location.assign("https://google.com");
   };
   return (
     <div className="container">
-      <h1>Event Handler</h1>
-      <input onChange={handleChangeInput} type="text"></input>
+      <a onClick={handleOnClick}>Google</a>
     </div>
   );
 }
